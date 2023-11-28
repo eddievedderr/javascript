@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='./js/main.js'></script>
+</head>
+
+
+<body>
+    
+
+<header>
+<nav id="nav">
+<a href="#">Cadastro de Alunos</a>
+</nav>
+</header>
+
+<section id="table">
+<form method="POST">
+
+
+<div class="mb-3">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="What's your name?" required>
+</div>
+
+<div class="mb-3"> 
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Your email address" required>
+</div>
+
+<div class="mb-3"> 
+    <label for="phone">Phone number</label>
+    <input type="number" id="phone" placeholder="Your phone number" required>
+</div>
+
+<div class="mb-3">
+    <label for="job">Job</label>
+    <input type="text" id="job" placeholder="What do you do for a living?" required>
+</div>
+
+<button type="submit">Add</button>
+<button type="submit">Start graphics (pizza)</button>
+
+</form>
+<hr>
+
+<table id="myTable" border="1">
+    <tr id="0">
+        <th>cod</th>
+        <th>nome</th>
+        <th>email</th>
+        <th>telefone</th>
+        <th>profissao</th>
+        <th>acao</th>
+    </tr>
+
+</table>
+
+</section>
+
+</body>
+</html>

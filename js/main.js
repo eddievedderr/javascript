@@ -15,7 +15,7 @@ window.onload = (event) => {
 let tbody = document.querySelector("#myTable");
 alunos.forEach((aluno, index) => {
     let tr = document.createElement("tr");
-
+tr.id = index+1;
     let tdCod = document.createElement("td");
     let tdName = document.createElement("td");
     let tdEmail = document.createElement("td");
@@ -44,9 +44,48 @@ alunos.forEach((aluno, index) => {
 
 }
 
+//making the 'erase' button work
 function erase(id) {
     let row = id.parentNode.parentNode.id;
     row = document.getElementById(row);
     row.parentNode.removeChild (row);
     return false
+}
+
+//making the 'add' button work
+function add(){
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let job = document.getElementById('job').value;
+    let table = document.getElementById('myTable');
+//calcullating table size
+let tableSize = table.rows.length;
+//inserting a line under the table
+let row = table.insertRow(tableSize);
+let col1 = row.insertCell (0);
+let col2 = row.insertCell (1);
+let col3 = row.insertCell (2);
+let col4 = row.insertCell (3);
+let col5 = row.insertCell (4);
+let col6 = row.insertCell (5);
+//adding an 'id' tag to the element being created
+row.id = tableSize;
+//creating the button code to delete a line
+let btnCode = "<button class='remove-btn' onclick='erase(this)'>Erase</button>";
+//fillin the line cells
+col1.innerHTML = tableSize;
+col2.innerHTML = name;
+col3.innerHTML = email;
+col4.innerHTML = phone;
+col5.innerHTML = job;
+col6.innerHTML = btnCode;
+ //Limpando os campos de inserção de dados
+ document.getElementById('nome').value = "";
+ document.getElementById('email').value = "";
+ document.getElementById('telefone').value = "";
+ document.getElementById('profissao').value = "";
+//Retornando 'false' para impedir o reload da pagina
+ return false
+
 }
